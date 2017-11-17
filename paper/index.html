@@ -7,9 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="layui/css/layui.css"  media="all">
-  <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
   <style>
-	.container{width:900px;margin:0 auto;margin-top:50px;}
+	.container{width:904px;margin:0 auto;margin-top:50px;}
 	.title{margin-bottom:50px;}
   </style>
 </head>
@@ -21,18 +20,16 @@
 <div><p>更新时间：2017/11/17 12:30</p></div>
 <div class="container">
 	<table class="layui-hide" id="test"></table>
-    <script src="layui/layui.js" charset="gbk"></script>
-	<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+    <script src="layui/layui.all.js"  charset="utf-8"></script>
 	 
 	<script>
-	layui.use('table', function(){
+	layui.use(['table','laypage'], function(){
 	  var table = layui.table;
+	  var laypage = layui.laypage;
 	  
 	  table.render({
 		elem: '#test'
-		,page: true //开启分页
-		,limit:30 //每页元素数
-		,url:'api/data'
+		,url:'api/getdata.php'
 		,cols: [[
 		  {field:'title', width:610, title: '论文题目', sort: true}
 		  ,{field:'name', width:100, title: '姓名'}
